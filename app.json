@@ -1,0 +1,6 @@
+{
+  "name": "CGI Demo",
+  "description": "Simple demo app for CGI",
+  "repository": "https://github.com/jusbE/cgi-demo",
+  "keywords": ["node"]
+}
