@@ -1,7 +1,7 @@
 {
-  "name": "cgi",
+  "name": "CGI-Demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple demo-app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,9 @@
     "url": "git+https://github.com/jusbE/cgi-demo.git"
   },
   "dependencies": {
-    "express": "4.13.3"
+    "ejs": "^2.5.2",
+    "express": "4.13.3",
+    "mongodb": "^2.2.11"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CGI Demo</title>
+</head>
+<body>
+
+  <form action="/" method="GET">
+    <input type="text" placeholder="name" name="keyword">
+    <button type="submit">find</button>
+  </form>
+  
+  <ul class="foundItems">
+      <span><%= foundItems %></span>
+  </ul>
+
+</body>
+</html>
