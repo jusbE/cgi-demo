@@ -7,7 +7,7 @@ function DataApi() {
 	//The url we want is: 'www.random.org/integers/?num=1&min=1&max=10&col=1&base=10&format=plain&rnd=new'
 	this.options = {
 	  host: 'api.imgur.com',
-	  path: '/3/gallery/hot/viral/1.json?',
+	  path: '/3/gallery/hot/viral/all/1.json?',
 	  method: 'GET',
 	  headers: {'Authorization': 'Client-ID ' + this.clientId}
 	};

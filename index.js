@@ -17,11 +17,17 @@ var getAndSaveImageMetadata = function(){
 		response.on('end', function() {
 			var jsonObject = JSON.parse(str);
 			console.log(jsonObject.data.length);
-			for(var i=0; i < 100; i++){
-				mongodb.collection('images').save(jsonObject.data[i], (err, result) => {
-					if (err) return console.log(err)
-					console.log('saved to database')
-				})
+			var count = 0;
+			var matches = 0;
+			while(matches<100){
+				if(!jsonObject.data[count].is_album){
+					matches++
+					mongodb.collection('images').save(jsonObject.data[count], (err, result) => {
+						if (err) return console.log(err)
+						console.log('saved to database')
+					})	
+				}
+			count++;
 			}
 		});
 	});
@@ -41,9 +47,10 @@ app.get('/', function(req, res) {
 	foundItems = [];
 	console.log(req.query);
 	if(req.query){
-		mongodb.collection('images').find({"title":req.query.keyword}).toArray(function(err, collection) {
-			collection = JSON.stringify(collection);
-			console.log("results: " + collection)
+		//{"title":req.query.keyword}
+		mongodb.collection('images').find().toArray(function(err, collection) {
+			json = JSON.stringify(collection);
+			collection = JSON.parse(json);
 			foundItems = collection;
 			res.render('index.ejs', {foundItems});
 	});
@@ -64,5 +71,3 @@ MongoClient.connect(mongodbURI, (err, database) => {
 	  console.log('Node app is running on port', app.get('port'));
 	});
 });
-
-

@@ -12,7 +12,10 @@
   </form>
   
   <ul class="foundItems">
-      <span><%= foundItems %></span>
+	<% for(var i=0; i<foundItems.length; i++) {%>
+      <% var url = foundItems[i].link%>
+	  <img src=<%= url %>><br>
+	<% }%>
   </ul>
 
 </body>
