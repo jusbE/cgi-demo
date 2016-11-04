@@ -7,13 +7,15 @@
 <body>
 
   <form action="/" method="GET">
-    <input type="text" placeholder="name" name="keyword">
+    <input type="text" placeholder="find images with keyword" name="keyword">
     <button type="submit">find</button>
   </form>
   
   <ul class="foundItems">
 	<% for(var i=0; i<foundItems.length; i++) {%>
-      <% var url = foundItems[i].link%>
+      <% var title = foundItems[i].title%>
+	  <% var url = foundItems[i].link%>
+	  <h1><%= title %></h1>
 	  <img src=<%= url %>><br>
 	<% }%>
   </ul>
