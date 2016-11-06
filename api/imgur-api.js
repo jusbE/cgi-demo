@@ -6,7 +6,7 @@ function ImgurApi() {
 	
 	this.options = {
 	  host: 'api.imgur.com',
-	  path: '/3/gallery/hot/viral/1.json?',
+	  path: '/3/gallery/hot/viral/all/1.json?',
 	  method: 'GET',
 	  headers: {'Authorization': 'Client-ID ' + this.clientId}
 	};

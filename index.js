@@ -36,9 +36,9 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public'));
 
+// Find images from db with given keyword
 app.get('/', function(req, res) {
 	foundItems = [];
-	console.log(req.query);
 	if(req.query){
 		var keyword = req.query.keyword;
 		var query = { title: new RegExp(keyword) };
@@ -46,11 +46,11 @@ app.get('/', function(req, res) {
 			json = JSON.stringify(collection);
 			collection = JSON.parse(json);
 			foundItems = collection;
-			res.render('index.ejs', {foundItems});
+			res.render('search.ejs', {foundItems});
 	});
 	
 	}else{
-		res.render('index.ejs', {foundItems});
+		res.render('search.ejs', {foundItems});
 	}
 });
 

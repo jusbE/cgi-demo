@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CGI Demo</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/styles/myStyle.css">
+</head>
+<body>
+
+<div class="center" id="appTitle">
+	<h1>CGI DEMO</h1>
+</div>
+
+<div class="center" id="appInstructions">
+	<ul>
+		<li>App retrieves 100 most viral images from Imgur using Imgur API</li>
+		<li>Search-form matches given keyword to image title and filters images with regexp</li>
+		<li>Keyword is case-sensitive</li>
+	</ul>
+</div>
+
+<form class="center" action="/" method="GET">
+	<input type="text" name="keyword">
+	<button type="submit">Find</button>
+</form>
+
+<div class="center">
+	<% for(var i=0; i<foundItems.length; i++) {%>
+      <% var title = foundItems[i].title%>
+	  <% var url = foundItems[i].link%>
+	  <div id="title"> 
+	    <h2><%= title %></h2>
+	  </div>
+	  <div id="item">
+		<img src=<%= url %>><br>
+	  </div>
+	<% }%>
+</div>
+
+</body>
+</html>

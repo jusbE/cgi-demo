@@ -1,0 +1,59 @@
+.center {
+	display: block;
+	margin: auto;
+	width: 50%;
+}
+
+input[type=text] {
+	width: 50%;
+	padding: 10px;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+button[type=submit] {
+	width: 50%;
+	border-radius: 4px;
+	margin-top: 10px;
+	background-color: #4CAF50;
+	border: none;
+    color: white;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+}
+
+button[type=submit]:hover {
+    background-color: #45a049;
+}
+
+#appTitle {
+	margin-bottom: 50px;
+}
+
+#appTitle h1 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 50px;
+	font-weight: 900;
+	color: red;
+}
+
+#appInstructions {
+	margin-bottom: 50px;
+}
+
+#appInstructions li {
+	font-family: 'Open Sans', sans-serif;
+}
+
+#title {
+	margin-top: 50px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#item {
+	margin-bottom: 50px;
+}
